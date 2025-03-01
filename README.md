@@ -1,6 +1,6 @@
 # CUMT校园网自动登录程序 v1.0
 
-由Cos_Intel与Claude一同完成 | 2025/3/1
+由Nothingeven与Claude一同完成 | 2025/3/1
 
 第一次使用请在连接WIFI CUMT_Stu时打开自动登录！！！！
 
@@ -24,7 +24,7 @@
 
 # CUMT Campus Network Auto-Login Program v1.0
 
-By Cos_Intel with Claude | 2025/3/1
+By Nothingeven with Claude | 2025/3/1
 
 For the first time use, please turn on auto login when connecting to WIFI CUMT_Stu ！！！！
 
