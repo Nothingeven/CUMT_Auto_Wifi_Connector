@@ -19,7 +19,7 @@
 - 数据保存在D:\CampusLoginData文件夹中
 - 本程序专为CUMT校园网设计，仅适用于中国矿业大学校园网
 
-
+矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/d347605cd476a494ab55c85975  访问密码：cumt
 
 
 # CUMT Campus Network Auto-Login Program v1.0
