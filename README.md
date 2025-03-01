@@ -1,6 +1,8 @@
 # CUMT校园网自动登录程序 v1.0
 
-由Nothingeven与Claude一同完成 | 2025/3/1
+由Cos_Intel与Claude一同完成 | 2025/3/1
+
+第一次使用请在连接WIFI CUMT_Stu时打开自动登录！！！！
 
 ## 程序亮点
 1. 一次设置，终身无忧：首次配置后自动后台登录，无需每次开机手动操作
@@ -18,18 +20,18 @@
 - 如自动登录失败，程序会自动显示设置界面
 - 数据保存在D:\CampusLoginData文件夹中
 - 本程序专为CUMT校园网设计，仅适用于中国矿业大学校园网
-
-矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/d347605cd476a494ab55c85975  访问密码：cumt
-
+-第一次使用请在连接WIFI CUMT_Stu时打开自动登录！！！！
 
 # CUMT Campus Network Auto-Login Program v1.0
 
-By Nothingeven with Claude | 2025/3/1
+By Cos_Intel with Claude | 2025/3/1
+
+For the first time use, please turn on auto login when connecting to WIFI CUMT_Stu ！！！！
 
 ## Program Highlights
-1. Once setup, lifetime worry-free: automatic background login after the first configuration, no need to manually operate every time you turn on the computer.
-2. Simple installation: single file design, no need for tedious installation process
-3. Lightweight: only 11M size and a configuration folder (automatically set in the D disk)
+1. Setup once, worry-free for life: automatic background login after the first configuration, no need to manually operate every time you turn on the computer.
+2. Simple Installation: Single file design, no need for tedious installation process.
+3. Lightweight: only 11M in size and a configuration folder (automatically set in the D drive).
 4. Safe and reliable: all data is saved locally, no network uploads.
 
 ## Instructions for use
@@ -41,6 +43,7 @@ By Nothingeven with Claude | 2025/3/1
 ## Frequently Asked Questions
 - If the automatic login fails, the program will show the setting interface automatically.
 - The data is saved in D:\CampusLoginData folder.
-- This program is specially designed for CUMT campus network, only applicable to China University of Mining and Technology campus network.
+- This program is specially designed for CUMT campus network, only applicable to China University of Mining and Technology (CUMT) campus network.
+-First time use, please turn on auto login when connecting to WIFI CUMT_Stu ！！！！
 
 Translated with DeepL.com (free version)
