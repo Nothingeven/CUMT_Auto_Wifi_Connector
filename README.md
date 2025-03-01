@@ -1,6 +1,6 @@
 # CUMT校园网自动登录程序 v1.0
 
-由Cos_Intel与Claude一同完成 | 2025/3/1
+由Nothingeven与Claude一同完成 | 2025/3/1
 
 ## 程序亮点
 1. 一次设置，终身无忧：首次配置后自动后台登录，无需每次开机手动操作
@@ -24,7 +24,7 @@
 
 # CUMT Campus Network Auto-Login Program v1.0
 
-By Cos_Intel with Claude | 2025/3/1
+By Nothingeven with Claude | 2025/3/1
 
 ## Program Highlights
 1. Once setup, lifetime worry-free: automatic background login after the first configuration, no need to manually operate every time you turn on the computer.
