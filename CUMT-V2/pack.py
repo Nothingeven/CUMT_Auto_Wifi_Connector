@@ -3,7 +3,7 @@ import tempfile
 
 # 当前日期和用户
 CURRENT_DATE = "2025-03-15"
-CURRENT_USER = "Nothingeven /Dear My Love Carta Kraft"
+CURRENT_USER = "Nothingeven"
 
 # 创建临时文件夹存放临时文件
 temp_dir = tempfile.mkdtemp()
@@ -33,15 +33,15 @@ VSVersionInfo(
       [
         StringTable(
           u'080404b0',
-          [StringStruct(u'CompanyName', u'Nothingeven /Dear My Love Carta Kraft'),
-           StringStruct(u'FileDescription', u'CUMT校园网自动登录助手 /Dear My Love Carta Kraft'),
+          [StringStruct(u'CompanyName', u'Nothingeven'),
+           StringStruct(u'FileDescription', u'CUMT校园网自动登录助手 /Dear My Love C.K.'),
            StringStruct(u'FileVersion', u'2.0'),
-           StringStruct(u'InternalName', u'CUMT_Auto_Wifi_Connector /Dear My Love Carta Kraft'),
-           StringStruct(u'LegalCopyright', u'(C) 2025 Nothingeven. 严禁用于商用，欢迎分享。'),
-           StringStruct(u'OriginalFilename', u'CUMT校园网自动登录助手 v2.0.exe /Dear My Love Carta Kraft'),
-           StringStruct(u'ProductName', u'CUMT校园网自动登录助手 /Dear My Love Carta Kraft'),
+           StringStruct(u'InternalName', u'CUMT_Auto_Wifi_Connector /Dear My Love C.K.'),
+           StringStruct(u'LegalCopyright', u'(C) 2025 Nothingeven. 严禁用于商用，欢迎分享。 /Dear My Love C.K.'),
+           StringStruct(u'OriginalFilename', u'CUMT校园网自动登录助手 v2.0.exe /Dear My Love C.K.'),
+           StringStruct(u'ProductName', u'CUMT校园网自动登录助手 /Dear My Love C.K.'),
            StringStruct(u'ProductVersion', u'2.0'),
-           StringStruct(u'Comments', u'CUMT校园网自动登录助手_v2.0.exe /Dear My Love Carta Kraft')])
+           StringStruct(u'Comments', u'CUMT校园网自动登录助手_v2.0.exe /Dear My Love C.K.')])
       ]
     ),
     VarFileInfo([VarStruct(u'Translation', [2052, 1200])])
