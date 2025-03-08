@@ -1,3 +1,9 @@
+##校园网自动登录助手 v2.0
+##作者: Nothingeven
+##更新日期: 2025-03-15
+##版权所有 (c) 2025 Nothingeven 校园网自动登录助手 v2.0  
+##严禁用于商业用途，欢迎个人分享使用
+##Dear My Love C.K.
 import tkinter as tk
 from tkinter import messagebox
 import json, os, requests, threading, sys, time, subprocess
@@ -434,7 +440,8 @@ class CampusNetLoginUI(tk.Tk):
     
     def ask_minimize_to_tray(self):
         if self.monitoring_var.get():
-            self.minimize_to_tray()
+            if messagebox.askyesno("后台运行", "是否将程序最小化到系统托盘在后台运行？"):
+                self.minimize_to_tray()
     
     def logout(self):
         self.status_var.set("正在注销...")
