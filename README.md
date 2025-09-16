@@ -1,8 +1,8 @@
-矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/0c20d989143c155c6ad502c4ed   密码：cumt
+矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/519cba5be763d07cbb05c9328d  访问密码：cumt
 
 GitHub开源链接：https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
 
-蓝奏云链接：https://wwwg.lanzouu.com/b014wpl1md   密码:cumt
+蓝奏云链接https://wwwg.lanzouu.com/b014wpm6jg      密码:cumt
 
 更新要点汇总
     UI/体验
@@ -53,11 +53,11 @@ GitHub开源链接：https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
 
 
 
-Official download link for Minzu Cloud Drive: https://pan.cumt.edu.cn/share/0c20d989143c155c6ad502c4ed   Password: cumt
+Official download link for Minzu Cloud Drive: https://pan.cumt.edu.cn/share/519cba5be763d07cbb05c9328d  Password:cumt
 
 GitHub open-source link: https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
 
-LanZou Cloud Link: https://wwwg.lanzouu.com/b014wpl1md   Password: cumt
+LanZou Cloud Link: https://wwwg.lanzouu.com/b014wpm6jg   Password: cumt
 
 Update Highlights Summary
     UI/Experience
