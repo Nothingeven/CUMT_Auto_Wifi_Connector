@@ -1,197 +1,101 @@
-矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/a1d7564c207ae5bdc7e81a2f91  访问密码：cumt
+矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/0c20d989143c155c6ad502c4ed   密码：cumt
+GitHub开源链接：https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
+蓝奏云链接：https://wwwg.lanzouu.com/b014wpl1md   密码:cumt
 
-CUMT Cloud Disk Offical Download Link：https://pan.cumt.edu.cn/share/a1d7564c207ae5bdc7e81a2f91  访问密码：cumt
+更新要点汇总
+    UI/体验
+        天空玻璃更通透：天空淡蓝 SKY_BLUE(215,240,255)，透明度 SKY_ALPHA 从 0xE0→0xCC，整体更“玻璃感”。
+        无边框圆角与毛玻璃：Win11 Acrylic 优先，失败自动降级到 Blur；增加圆角遮罩去黑边。
+        自定义标题栏与托盘常驻，关闭时最小化到托盘。
 
-重大更新
-1.智能网络守护
-     静默自动检测与重连：即使电脑长期休眠导致校园网断开，程序也能智能识别并尝试重新连接
-     智能通知机制：仅在首次连接失败时显示提示，之后静默处理，不打扰用户体验
-     
-2.后台运行优化
-     系统托盘集成：全新托盘图标设计，最小化后在后台持续保障网络连接
-     零打扰模式：完全隐藏控制台窗口，提供纯净的用户体验
-     
-3.功能完善
-     开机启动修正：修复了无法取消开机自启的问题，用户可完全控制启动选项
-     操作逻辑优化：重新设计程序流程，使交互更加直观自然
-     
-4.性能提升
-     源代码重构：大幅优化底层代码，显著提升程序运行效率
-     资源占用降低：降低内存和CPU占用，更适合长时间后台运行
-     
-5.界面改进
-     UI设计优化：更现代的界面设计，提供更舒适的视觉体验
-     交互细节完善：优化按钮反馈、状态显示等小细节，提升整体体验
-     
-使用提示
-     系统托盘访问：程序最小化后，可从屏幕右下角托盘区域找到图标
-     快速设置：右键托盘图标可快速执行常用操作
-     
+    安全/数据
+        DPAPI 加密保存密码：默认“用户范围”；解密兼容旧“机器范围”密文（向后兼容）。
+        首次运行自动迁移旧版 D:\CampusLoginData\credentials.json 明文配置到新目录并加密保存。
+        移除 D: 盘依赖，统一使用 LOCALAPPDATA 作为数据目录。
+        配置“原子写”（临时文件 + replace），降低掉电/崩溃造成的配置损坏风险。
 
+    启动与分发（大规模稳态）
+        开机自启动：以 .lnk 方式注入“--auto”静默自启。
+        单实例互斥锁，自动模式隐藏控制台窗口。
+        错峰与退避抖动：自动模式按用户名哈希 0–12s 启动抖动；指数退避带 ±15% 抖动，避免洪峰冲击网关。
+        仅校园网络策略：非校园场景自动休眠，节省无效请求。
 
-详细改进部分——由AI分析生成。
-1. 整体架构优化
-        代码结构更加简洁：第二个程序采用了更简洁的代码结构，减少了冗余代码
-        模块化设计：功能划分更清晰，如网络监控、系统托盘等被封装为独立类
-        错误处理更健壮：使用了更多的异常捕获，提高了程序稳定性
-        版本升级：从1.0.0升级到了2.0.0，表明这是一次重大更新
-2. 新增核心功能
-    2.1 后台网络监控与自动重连功能
-         新增了BackgroundMonitor类，能够实时监控网络连接状态
-         当检测到网络断开时，自动尝试重新连接校园网
-         用户可以选择是否启用自动重连功能
-    2.2 系统托盘支持
-         新增了SimpleTray类，实现了系统托盘功能
-         程序可以最小化到系统托盘后台运行，不占用桌面空间
-         从托盘可以快速恢复窗口或退出程序
-    2.3 网络连接检测
-        新增了check_internet()函数，可以检测网络连接状态
-        使用ping命令检测是否能连接到外网（www.baidu.com）
-        针对Windows和其他操作系统进行了优化
-    2.4 系统通知
-        新增了show_notification()函数，实现系统通知功能
-        当网络状态变化时（如断网、重连失败）会发送系统通知
-        在程序最小化运行时可以及时了解网络状态
-3. 用户界面优化
-        界面设计更加简洁现代，提升了视觉体验
-        窗口尺寸更加合理（从680x650调整为700x540）
-        界面布局优化，减少了不必要的分隔和间距
-        新增了"隐藏到托盘"按钮，方便用户切换到后台运行模式
-4. 用户体验改进
-        智能最小化：启用自动重连后，会询问是否最小化到托盘
-        关闭确认：监控运行时关闭窗口，会询问是否确认退出或最小化到托盘
-        静默运行：自动模式下可以完全在后台运行，不打扰用户
-        网络状态通知：当网络断开或恢复时会通过系统通知提醒用户
-5. 新增配置选项
-        启用自动重连：可以选择是否启用网络监控和自动重连
-        关闭窗口时最小化到托盘：可以选择关闭窗口的行为
-        所有配置选项都会被保存，下次启动时自动加载
-6. 性能与稳定性优化
-        后台进程优化：使用线程处理长时间运行的任务
-        静默执行命令：使用CREATE_NO_WINDOW标志执行ping命令，避免弹出控制台窗口
-        超时处理：所有网络请求都有超时设置，避免长时间等待
-        更短的超时时间：登录超时从1000秒减小到5秒，提高响应速度
-7. 其他改进
-        代码简化：多处使用了更简洁的代码写法
-        通知防重复：使用标志位避免重复显示相同通知
-        日志记录优化：更精简的日志记录机制，减少了不必要的信息
-        优雅退出：提供了更完善的程序退出机制
+    网络判定与自动登录（核心演进）
+        成功判定增强：除 success/login_ok/中文提示外，若不确定立即做连通性校验，连通判定为 OK_ONLINE，避免“成功上网却提示失败”。
+        网关域名跳转判断：访问网关根地址，识别 302 到 aXX.htm、携带 wlanuserip/ssid/eportal/login 等参数即判定为 captive（门户拦截）。
+        外网导回/复位判定：对外网探测结果若出现被导回网关或连接复位（RST），结合网关可达，判定 captive。
+        页面内跳转识别：识别 meta refresh / JS window.location 跳转，防止“无 302 但实际被拦截”漏检。
+        多信号融合与阈值：综合网关跳转、外网导回、错误计数、可达性，加入去抖/迟滞（online→captive/offline 需连续两次确认）。
+        手动登录复核：若初判 captive，短延迟复检一次；若复检 online 返回 OK_ONLINE_FINAL，减少误报。
+        严格连通性与 DNS 劫持检测：
+            严格探测集：要求 204 端点必须返回 204；微软/苹果连通性页进行内容匹配，防止“白名单/缓存”导致的假在线。
+            随机 .invalid 域名 DNS 检测：若被解析或异常行为，作为 captive 的强信号。
+        注销判定优化：注销后根据网关/外网状态返回“已注销（检测到门户拦截）/仍可用（网关延迟收敛或白名单）/当前离线”。
+
+    兼容性与鲁棒性
+        User-Agent 统一改为 ASCII，修复 requests 在发送中文 UA 时出现的 'latin-1' 编码报错。
+        SSID 解析使用系统首选编码，避免 netsh 输出编码导致的解析失败。
+        Win 特性调用全包裹降级：Acrylic/圆角失败不影响窗口正常显示。
+
+    日志与诊断
+        日志限长与截断：>2MB 自动保留末尾 256KB，避免占满磁盘。
+        在线心跳：在线状态每 5 分钟打印心跳，证明监控线程仍在运行。
+        可选“详细检测日志”：输出每条外网/严格探测样本与 DNS 检测结果，现场排障更高效。
+
+    交互与提示
+        统一错误码：OK、OK_ONLINE、OK_ONLINE_FINAL、E_NO_CRED、E_BAD_PASS、E_LIMIT、E_CAPTIVE、E_OFFLINE、E_TIMEOUT、E_REQUEST、E_UNKNOWN。
+        通知冷却与等级：off/important/all，降低多人并发使用时的干扰。
 
 
-Major Updates
-1. Intelligent Network Guard
-     Silent automatic detection and reconnection: Even if the computer hibernates for a long period of time and disconnects from the campus network, the program can intelligently recognize and try to reconnect.
-     Intelligent notification mechanism: only display a reminder when the connection fails for the first time, and then process it silently without disturbing the user experience.
-2. Background operation optimization
-     System Tray Integration: New tray icon design, after minimizing, it will continue to protect the network connection in the background.
-     Zero Interference Mode: Completely hide the console window to provide a pure user experience.
-3. Function Improvement
-     Boot-up fix: Fixed the problem that boot-up cannot be canceled, users can fully control the boot-up options.
-     Operation Logic Optimization: Redesigned the program flow to make the interaction more intuitive and natural.
-4.Performance Improvement
-     Source code refactoring: significantly optimize the underlying code to improve the efficiency of the program.
-     Reduced resource consumption: Reduced memory and CPU consumption, more suitable for long-time background operation.
-5.Interface Improvement
-     UI design optimization: more modern interface design, providing a more comfortable visual experience.
-     Improvement of interaction details: Optimize the feedback of buttons, status display and other small details to improve the overall experience.
-Tips
-     System tray access: After minimizing the program, you can find the icon in the tray area at the bottom right corner of the screen.
-     Quick Setup: Right-click on the tray icon to quickly perform frequently used operations.
+————————————————————————————————————————————————————————————————————
 
-Detailed Improvements section - generated by AI analysis.
-1. Overall architecture optimization
-        More concise code structure: the second program adopts a more concise code structure and reduces redundant code.
-        Modularized design: Functions are more clearly divided, such as network monitoring and system tray are encapsulated into separate classes
-        More robust error handling: more exception catching is used to improve the stability of the program.
-        Version upgrade: upgraded from 1.0.0 to 2.0.0, indicating that this is a major update.
-2. New Core Features
-    2.1 Background network monitor and auto-reconnect function.
-         The BackgroundMonitor class is added to monitor the network connection status in real time.
-         When network disconnection is detected, it will automatically try to reconnect to the campus network.
-         Users can choose whether to enable the automatic reconnection function or not.
-    2.2 System Tray Support
-         The SimpleTray class has been added to realize the system tray function.
-         Programs can be minimized to the system tray to run in the background without occupying desktop space.
-         From the tray, you can quickly restore the window or exit the program.
-    2.3 Network Connection Checking
-        The check_internet() function has been added to check the network connection status.
-        Use the ping command to check if you can connect to an external network (www.baidu.com).
-        Optimized for Windows and other operating systems
-    2.4 System Notifications
-        Added show_notification() function for system notification
-        System notification will be sent when the network status changes (e.g. disconnection, reconnection failure).
-        When the program is minimized and running, you can know the network status in time.
-3. User interface optimization
-        The interface design is more simple and modern, which improves the visual experience.
-        The window size is more reasonable (from 680x650 to 700x540).
-        Optimized interface layout, reduced unnecessary separation and spacing.
-        New “Hide to tray” button is added to facilitate users to switch to background running mode.
-4. User experience improvement
-        Smart Minimize: ask whether to minimize to tray after enabling auto-reconnect.
-        Close Confirmation: When the window is closed while the monitor is running, it will ask whether to confirm exit or minimize to the tray.
-        Silent running: Auto mode can run completely in the background without disturbing users.
-        Network status notification: When the network is disconnected or restored, the user will be notified via system notification.
-5. New configuration options
-        Enable auto-reconnect: You can choose whether to enable network monitoring and auto-reconnect.
-        Minimize to tray when closing windows: You can choose the behavior of closing windows.
-        All configuration options will be saved and loaded automatically on next startup.
-6. Performance and stability optimization
-        Background process optimization: Use threads for long-running tasks.
-        Silent command execution: ping commands are executed using the CREATE_NO_WINDOW flag to avoid popping up console windows
-        Timeout handling: All network requests have timeout settings to avoid long waiting time.
-        Shorter timeout: the login timeout is reduced from 1000 seconds to 5 seconds to improve response time.
-7. Other improvements
-        Code simplification: more concise code writing method is used in many places.
-        Notification anti-repeat: Use flag bit to avoid showing the same notification repeatedly.
-        Logging optimization: more streamlined logging mechanism, reducing unnecessary information.
-        Elegant Exit: Provide a better exit mechanism for the program.
 
-Detailed Improvements section - generated by AI analysis.
-1. Overall architecture optimization
-        More concise code structure: the second program adopts a more concise code structure and reduces redundant code.
-        Modularized design: Functions are more clearly divided, such as network monitoring and system tray are encapsulated into separate classes
-        More robust error handling: more exception catching is used to improve the stability of the program.
-        Version upgrade: upgraded from 1.0.0 to 2.0.0, indicating that this is a major update.
-2. New Core Features
-    2.1 Background network monitor and auto-reconnect function.
-         The BackgroundMonitor class has been added to monitor the network connection status in real time.
-         When network disconnection is detected, it will automatically try to reconnect to the campus network.
-         Users can choose whether to enable the automatic reconnection function or not.
-    2.2 System Tray Support
-         The SimpleTray class has been added to realize the system tray function.
-         Programs can be minimized to the system tray to run in the background without occupying desktop space.
-         From the tray, you can quickly restore the window or exit the program.
-    2.3 Network Connection Checking
-        The check_internet() function has been added to check the network connection status.
-        Use the ping command to check if you can connect to an external network (www.baidu.com).
-        Optimized for Windows and other operating systems
-    2.4 System Notifications
-        Added show_notification() function for system notification
-        System notification will be sent when the network status changes (e.g. disconnection, reconnection failure).
-        When the program is minimized and running, you can know the network status in time.
-3. User interface optimization
-        The interface design is more simple and modern, which improves the visual experience.
-        The window size is more reasonable (from 680x650 to 700x540).
-        Optimized interface layout, reduced unnecessary separation and spacing.
-        New “Hide to tray” button is added to facilitate users to switch to background running mode.
-4. User experience improvement
-        Smart Minimize: ask whether to minimize to the tray when auto-reconnect is enabled.
-        Close Confirmation: When the window is closed while the monitor is running, it will ask whether to confirm exit or minimize to the tray.
-        Silent running: Auto mode can run completely in the background without disturbing users.
-        Network status notification: When the network is disconnected or restored, the user will be notified via system notification.
-5. New configuration options
-        Enable auto-reconnect: You can choose whether to enable network monitoring and auto-reconnect.
-        Minimize to tray when closing windows: You can choose the behavior of closing windows.
-        All configuration options will be saved and loaded automatically on next startup.
-6. Performance and stability optimization
-        Background process optimization: Use threads for long-running tasks.
-        Silent command execution: ping commands are executed using the CREATE_NO_WINDOW flag to avoid popping up console windows
-        Timeout handling: All network requests have timeout settings to avoid long waiting time.
-        Shorter timeout: the login timeout is reduced from 1000 seconds to 5 seconds to improve response time.
-7. Other improvements
-        Code simplification: more concise code writing method is used in many places.
-        Notification anti-repeat: Use flag bit to avoid showing the same notification repeatedly.
-        Logging optimization: more streamlined logging mechanism, reducing unnecessary information.
-        Elegant Exit: Provide a better exit mechanism for the program.
 
-Translated with DeepL.com (free version)
+Official download link for Minzu Cloud Drive: https://pan.cumt.edu.cn/share/0c20d989143c155c6ad502c4ed   Password: cumt
+GitHub open-source link: https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
+LanZou Cloud Link: https://wwwg.lanzouu.com/b014wpl1md   Password: cumt
+
+Update Highlights Summary
+    UI/Experience
+        Enhanced sky transparency: Sky color adjusted to SKY_BLUE(215,240,255), transparency SKY_ALPHA increased from 0xE0 to 0xCC for a more “glass-like” effect.
+        Borderless Rounded Corners & Frosted Glass: Prioritizes Win11 Acrylic; automatically falls back to Blur if unavailable. Added rounded corner masks to eliminate black borders.
+        Customizable Title Bar & System Tray Residency: Minimizes to tray when closed.
+
+    Security/Data
+        DPAPI Encrypted Password Storage: Default “User Scope”; decryption compatible with legacy “Machine Scope” ciphertext (backward compatible).
+        First-run auto-migration of legacy plaintext credentials from D:\CampusLoginData\credentials.json to new encrypted directory.
+Removed D: drive dependency; unified data directory to LOCALAPPDATA.
+Implemented “atomic write” (temp file + replace) to reduce configuration corruption risks from power loss/crashes.
+
+    Launch & Distribution (Large-Scale Steady State)
+        Auto-start on boot: Injects “--auto” silently via .lnk for silent startup.
+        Single-instance mutex lock; hides console window in auto mode.
+        Off-peak scheduling & evasive jitter: Auto mode applies 0–12s startup jitter based on username hash; exponential backoff with ±15% jitter prevents gateway overload during traffic spikes.
+        Campus Network Only Policy: Auto-hibernates outside campus networks to reduce redundant requests.
+
+Network Verification & Auto-Login (Core Evolution)
+*   Enhanced Success Verification: Beyond success/login_ok/Chinese prompts, performs immediate connectivity checks if uncertain. Connectivity is marked as OK_ONLINE to prevent “failed” prompts despite successful internet access.
+        Gateway Domain Redirect Detection: Accesses the gateway root address; identifies 302 redirects to aXX.htm with parameters like wlanuserip/ssid/eportal/login as captive portal interception.
+        External Network Redirect/Reset Detection: If external network probes show redirection back to the gateway or connection reset (RST), combined with gateway reachability, it is identified as captive portal.
+        Intra-page Redirect Detection: Identifies meta refresh or JS window.location redirects to prevent false negatives where “no 302 exists but actual interception occurs.”
+        Multi-signal Fusion & Thresholding: Integrates gateway redirects, external network redirection, error counts, and reachability with debouncing/hysteresis (online→captive/offline requires two consecutive confirmations).
+        Manual Login Verification: If initially classified as captive, perform a short-delay recheck; if recheck confirms online, return OK_ONLINE_FINAL to reduce false positives.
+Strict Connectivity and DNS Hijacking Detection:
+- Strict probe set: Requires 204 endpoints to return 204 responses; performs content matching on Microsoft/Apple connectivity pages to prevent “whitelist/cache” false positives.
+            Random .invalid domain DNS checks: If resolved or exhibits abnormal behavior, serves as a strong captive signal.
+Optimized logout determination: After logout, returns “Logged out (detected portal interception)/Still accessible (gateway delay convergence or whitelist)/Currently offline” based on gateway/external network status.
+
+    Compatibility and Robustness
+        Unified User-Agent to ASCII, fixing ‘latin-1’ encoding errors when sending Chinese UAs via requests.
+        SSID parsing uses system default encoding to prevent failures caused by netsh output encoding.
+        Full wrapper downgrade for Win feature calls: Acrylic/rounded corners failure does not affect normal window display.
+
+    Logging and Diagnostics
+        Log size limit and truncation: Automatically preserves the last 256KB for logs exceeding 2MB to prevent disk space exhaustion.
+        Online heartbeat: Prints a heartbeat every 5 minutes to confirm the monitoring thread remains active.
+        Optional “Detailed Diagnostic Log”: Outputs results for each external network/strict probe sample and DNS check, enabling more efficient on-site troubleshooting.
+
+    Interaction & Notifications
+        Unified Error Codes: OK, OK_ONLINE, OK_ONLINE_FINAL, E_NO_CRED, E_BAD_PASS, E_LIMIT, E_CAPTIVE, E_OFFLINE, E_TIMEOUT, E_REQUEST, E_UNKNOWN.
+        Notification Cooling & Priority: off/important/all. Reduces interference during concurrent multi-user operations.
+Interaction and Prompts Unified Error Codes: OK, OK_ONLINE, OK_ONLINE_FINAL, E_NO_CRED, E_BAD_PASS, E_LIMIT, E_CAPTIVE, E_OFFLINE, E_TIMEOUT, E_REQUEST, E_UNKNOWN. Notification Cooling and Priority Levels: off/important/all, reducing disruption during multi-user concurrency.
