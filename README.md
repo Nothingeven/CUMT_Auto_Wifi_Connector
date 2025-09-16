@@ -1,6 +1,6 @@
-矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/6cb2ef3182b681150419e7ae51  访问密码：cumt
+矿大云盘官方下载链接：https://pan.cumt.edu.cn/share/a1d7564c207ae5bdc7e81a2f91  访问密码：cumt
 
-CUMT Cloud Disk Offical Download Link：https://pan.cumt.edu.cn/share/6cb2ef3182b681150419e7ae51  访问密码：cumt
+CUMT Cloud Disk Offical Download Link：https://pan.cumt.edu.cn/share/a1d7564c207ae5bdc7e81a2f91  访问密码：cumt
 
 重大更新
 1.智能网络守护
