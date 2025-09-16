@@ -71,7 +71,7 @@ import requests
 # 基础信息与路径
 # ----------------------------
 APP_NAME = "校园网自动登录工具"
-APP_VERSION = "3.0"
+APP_VERSION = "3.0                                                                         By Nothingeven For C.K."
 USER_AGENT = "CUMT-AutoLogin/3.0"  # ASCII-only
 ORG_DATA_DIR = os.path.join(os.getenv("LOCALAPPDATA") or os.path.expanduser("~"), "CampusLoginData")
 APP_DATA_DIR = os.path.join(os.getenv("LOCALAPPDATA") or os.path.expanduser("~"), "CUMT_Auto_Wifi_Connector")
