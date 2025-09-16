@@ -49,12 +49,14 @@ GitHub开源链接：https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
         通知冷却与等级：off/important/all，降低多人并发使用时的干扰。
 
 
-————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————
 
 
 
 Official download link for Minzu Cloud Drive: https://pan.cumt.edu.cn/share/0c20d989143c155c6ad502c4ed   Password: cumt
+
 GitHub open-source link: https://github.com/Nothingeven/CUMT_Auto_Wifi_Connector/
+
 LanZou Cloud Link: https://wwwg.lanzouu.com/b014wpl1md   Password: cumt
 
 Update Highlights Summary
